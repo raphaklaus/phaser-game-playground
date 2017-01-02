@@ -86278,8 +86278,7 @@ Phaser.Physics.Arcade.prototype = {
             if (body2.moves)
             {
                 applyFriction = true;
-                frictionCallback = function() {
-                  return (body2.x - body2.prev.x) * body2.friction.x;
+                frictionAmount = (body2.x - body2.prev.x) * body2.friction.x;
                 }
             }
         }
@@ -87441,7 +87440,7 @@ Phaser.Physics.Arcade.Body.prototype = {
             //  And finally we'll integrate the new position back to the Sprite in postUpdate
 
             if (applyFriction) {
-              this.x += frictionCallback();
+              this.x += frictionAmount;
               applyFriction = false;
             }
 
