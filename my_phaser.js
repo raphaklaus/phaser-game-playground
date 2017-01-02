@@ -86279,7 +86279,6 @@ Phaser.Physics.Arcade.prototype = {
             {
                 applyFriction = true;
                 frictionAmount = (body2.x - body2.prev.x) * body2.friction.x;
-                }
             }
         }
         else
