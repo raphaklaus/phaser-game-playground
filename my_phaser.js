@@ -87440,8 +87440,10 @@ Phaser.Physics.Arcade.Body.prototype = {
             //  Now the State update will throw collision checks at the Body
             //  And finally we'll integrate the new position back to the Sprite in postUpdate
 
-            if (applyFriction)
+            if (applyFriction) {
               this.x += frictionCallback();
+              applyFriction = false;
+            }
 
             if (this.collideWorldBounds)
             {
