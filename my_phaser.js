@@ -61,6 +61,9 @@ module.exports = Line;
  */
 function Line(){};
 
+applyFriction = false;
+frictionCallback = {};
+
 /**
  * Compute the intersection between two lines.
  * @static
